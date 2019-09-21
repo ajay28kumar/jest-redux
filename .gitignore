@@ -58,7 +58,7 @@ typings/
 .env
 
 .DS_Store
+.idea/
 
 # lock files
-yarn.lock
 package-lock.json
