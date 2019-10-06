@@ -1,4 +1,5 @@
-import { h } from 'preact';
+/* eslint-env node, jest */
+import { h , Component} from 'preact';
 import { shallow } from 'enzyme';
 import Home from '../../home';
 
