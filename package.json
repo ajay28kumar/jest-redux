@@ -32,18 +32,23 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-preact-pure": "^2.1.0",
     "eslint": "^4.5.0",
+    "eslint-config-synacor": "^3.0.5",
     "identity-obj-proxy": "^3.0.0",
     "if-env": "^1.0.0",
     "jest": "^24.9.0",
     "jest-preact-preset": "^1.0.0",
     "jsdom": "^15.1.1",
-    "preact-cli": "^2.1.0"
+    "preact-cli": "^2.1.0",
+    "redux-devtools-extension": "^2.13.8"
   },
   "dependencies": {
     "preact": "^10.0.0",
     "preact-material-components": "^1.6.0",
     "preact-render-to-string": "^4.1.0",
-    "preact-router": "^3.0.1"
+    "preact-router": "^3.0.1",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0"
   },
   "jest": {
     "setupFilesAfterEnv": [
