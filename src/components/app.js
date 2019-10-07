@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
-import { Provider } from 'react-redux';
+import { Provider } from 'preact-redux';
 import store from '../store';
 import Header from './header';
 import Home from '../routes/home';
@@ -16,7 +16,7 @@ export default class App extends Component {
 	 */
 	state = {
 		currentUrl: ''
-	}
+	};
 	handleRoute = e => {
 		this.setState({
 			currentUrl: e.url
@@ -25,17 +25,17 @@ export default class App extends Component {
 
 	render() {
 		return (
-			<Provider store={store}>
-				<div id="app">
-					<Header selectedRoute={this.state.currentUrl} />
+			<div id="app">
+				<Header selectedRoute={this.state.currentUrl} />
+				<Provider store={store}>
 					<Router onChange={this.handleRoute}>
 						<Home path="/" />
 						<Profile path="/profile/" user="me" />
 						<Profile path="/profile/:user" />
 						<NotFound default />
 					</Router>
-				</div>
-			</Provider>
+				</Provider>
+			</div>
 		);
 	}
 }
