@@ -7,7 +7,7 @@
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
     "serve": "preact build && preact serve",
-    "dev": "preact watch",
+    "dev": "sh -ac '. ./.env.dev; preact watch -p 4000'",
     "lint": "eslint src",
     "test": "NODE_ENV=test jest --no-cache --coverage",
     "test:watch": "NODE_ENV=test jest  --watchAll --no-cache"
@@ -39,7 +39,9 @@
     "jest-preact-preset": "^1.0.0",
     "jsdom": "^15.1.1",
     "preact-cli": "^2.2.1",
-    "redux-devtools-extension": "^2.13.8"
+    "preact-cli-plugin-env-vars": "^1.2.1",
+    "redux-devtools-extension": "^2.13.8",
+    "workbox-webpack-plugin": "^4.3.1"
   },
   "dependencies": {
     "preact": "^10.0.1",
