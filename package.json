@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "preact build",
+    "build": "sh -ac '. ./.env.${PREACT_APP_ENV}; preact build  --no-prerender'",
+    "build:production": "PREACT_APP_ENV=production npm run build",
     "serve": "preact build && preact serve",
     "dev": "sh -ac '. ./.env.dev; preact watch -p 4000'",
     "lint": "eslint src",
@@ -45,10 +46,11 @@
   },
   "dependencies": {
     "preact": "^10.0.1",
+    "preact-async-route": "^2.2.1",
     "preact-material-components": "^1.6.1",
     "preact-redux": "^2.1.0",
-    "preact-render-to-string": "^4.1.0",
-    "preact-router": "^3.0.1",
+    "preact-render-to-string": "^5.1.0",
+    "preact-router": "^3.1.0",
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0"

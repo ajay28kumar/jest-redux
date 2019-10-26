@@ -18,7 +18,7 @@ export default class App extends Component {
 		return (
 			<Provider store={store}>
 				<div id="app">
-					<Header selectedRoute={this.state.currentUrl} />
+					<Header selectedRoute={'select'} />
 					<Router>
 						<Home path="/" />
 						<Profile path="/profile/" user="me" />
