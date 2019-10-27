@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { Router } from 'preact-router';
-import { Provider } from 'preact-redux';
+import { Provider } from 'react-redux';
 import store from '../store';
 import Header from './header';
 import Home from '../routes/home';
