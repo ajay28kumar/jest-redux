@@ -1,7 +1,8 @@
-import { h, Component } from 'preact';
-import Card from 'preact-material-components/Card';
-import 'preact-material-components/Card/style.css';
-import style from './style';
+import React from "preact/compat";
+import { Component } from 'preact';
+import { Card } from '@material-ui/core';
+import style from './style.css';
+
 
 export default class NotFound extends Component {
 	render() {
