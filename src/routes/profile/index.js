@@ -1,5 +1,5 @@
 import {  Component } from 'preact';
-import { Button } from '@material-ui/core';
+import Button  from '@material-ui/core/Button';
 import style from './style.css';
 
 

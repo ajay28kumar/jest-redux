@@ -6,7 +6,7 @@ import style from './style.css';
 export default class NotFound extends Component {
 	render() {
 		return (
-			<div class={`${style.home} page`}>
+			<div class={style.home}>
 				<Card>
 					<div class={style.cardHeader}>
 						<h2 class=" mdc-typography--title">404! Page not found.</h2>

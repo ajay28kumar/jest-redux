@@ -1,7 +1,7 @@
 import { Component } from 'preact';
-import { AppBar, Toolbar, Typography, IconButton, Button } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, IconButton } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import Settings from '@material-ui/icons/Settings'
+import Settings from '@material-ui/icons/Settings';
 import { TemporaryDrawer } from './drawer';
 import { withStyles } from '@material-ui/styles';
 
@@ -41,7 +41,7 @@ class Header extends Component {
 						<Typography variant="h6" className={title}>
 							Preact App
 						</Typography>
-						<Settings onClick={this.props.changeTheme}/>
+						<Settings onClick={this.props.changeTheme} />
 					</Toolbar>
 				</AppBar>
 				<TemporaryDrawer
@@ -54,43 +54,3 @@ class Header extends Component {
 }
 
 export default withStyles(styles)(Header);
-
-
-/*
-<TopAppBar className="topappbar">
-					<TopAppBar.Row>
-						<TopAppBar.Section align-start>
-							<TopAppBar.Icon menu onClick={this.openDrawer}>
-								menu
-							</TopAppBar.Icon>
-							<TopAppBar.Title>Preact app</TopAppBar.Title>
-						</TopAppBar.Section>
-						<TopAppBar.Section align-end shrink-to-fit onClick={this.openSettings}>
-							<TopAppBar.Icon>settings</TopAppBar.Icon>
-						</TopAppBar.Section>
-					</TopAppBar.Row>
-				</TopAppBar>
-				<Drawer modal ref={this.drawerRef}>
-					<Drawer.DrawerContent>
-						<Drawer.DrawerItem selected={props.selectedRoute === '/'} onClick={this.goHome}>
-							<List.ItemGraphic>home</List.ItemGraphic>
-							Home
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem selected={props.selectedRoute === '/profile'} onClick={this.goToMyProfile}>
-							<List.ItemGraphic>account_circle</List.ItemGraphic>
-							Profile
-						</Drawer.DrawerItem>
-					</Drawer.DrawerContent>
-				</Drawer>
-				<Dialog ref={this.dialogRef}>
-					<Dialog.Header>Settings</Dialog.Header>
-					<Dialog.Body>
-						<div>
-							Enable dark theme <Switch onClick={this.toggleDarkTheme} />
-						</div>
-					</Dialog.Body>
-					<Dialog.Footer>
-						<Dialog.FooterButton accept>OK</Dialog.FooterButton>
-					</Dialog.Footer>
-				</Dialog>
- */
