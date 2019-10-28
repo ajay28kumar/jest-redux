@@ -1,9 +1,23 @@
 import { Component } from 'preact';
-import { AppBar, Toolbar, Typography, IconButton } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, IconButton, Button } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import Settings from '@material-ui/icons/Settings'
 import { TemporaryDrawer } from './drawer';
+import { withStyles } from '@material-ui/styles';
 
-export default class Header extends Component {
+const styles =(theme) => ({
+	root: {
+		flexGrow: 1
+	},
+	menuButton: {
+		marginRight: theme.spacing(2)
+	},
+	title: {
+		flexGrow: 1
+	}
+});
+
+class Header extends Component {
 	state = {
 		sideDrawer: false
 	};
@@ -20,11 +34,14 @@ export default class Header extends Component {
 				<AppBar position="static">
 					<Toolbar>
 						<IconButton edge="start" className={menuButton} color="inherit" aria-label="menu">
-							<MenuIcon onClick={() => this.setState({ sideDrawer: !this.state.sideDrawer })} />
+							<MenuIcon
+								onClick={() => this.setState({ sideDrawer: !this.state.sideDrawer })}
+							/>
 						</IconButton>
 						<Typography variant="h6" className={title}>
-							PREACT APP
+							Preact App
 						</Typography>
+						<Settings onClick={this.props.changeTheme}/>
 					</Toolbar>
 				</AppBar>
 				<TemporaryDrawer
@@ -35,6 +52,8 @@ export default class Header extends Component {
 		);
 	}
 }
+
+export default withStyles(styles)(Header);
 
 
 /*
