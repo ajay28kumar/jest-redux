@@ -8,7 +8,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Home  from '@material-ui/icons/Home';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 
-
 const useStyles = makeStyles({
 	list: {
 		width: 250

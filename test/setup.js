@@ -4,8 +4,8 @@ import Adapter from 'enzyme-adapter-preact-pure';
 
 // Setup JSDOM
 const dom = new JSDOM('', {
-  // Enable `requestAnimationFrame` which Preact uses internally.
-  pretendToBeVisual: true,
+	// Enable `requestAnimationFrame` which Preact uses internally.
+	pretendToBeVisual: true
 });
 
 global.Event = dom.window.Event;

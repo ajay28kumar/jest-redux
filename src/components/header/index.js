@@ -1,8 +1,7 @@
 import { Component } from 'preact';
-import { AppBar, Toolbar, Typography, Button, IconButton } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, IconButton } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { TemporaryDrawer } from './drawer';
-import React from 'preact/compat';
 
 export default class Header extends Component {
 	state = {

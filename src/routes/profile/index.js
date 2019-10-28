@@ -1,4 +1,3 @@
-import React from 'preact/compat';
 import {  Component } from 'preact';
 import { Button } from '@material-ui/core';
 import style from './style.css';
