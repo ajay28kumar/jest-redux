@@ -37,7 +37,7 @@ export default class App extends Component {
 			<Provider store={store}>
 				<ThemeProvider theme={themes}>
 					<div id="app">
-						<Header selectedRoute={'select'} changeTheme={this.changeTheme} />
+						<Header selectedRoute={'select'} changeTheme={this.changeTheme} activeTheme={this.state.theme === 'light'}/>
 						<Router>
 							<Home path="/" />
 							<Profile path="/profile/" user="me" />
