@@ -1,5 +1,5 @@
 import { Component } from 'preact';
-import { Card } from '@material-ui/core';
+import Card  from '@material-ui/core/Card';
 import style from './style.css';
 
 

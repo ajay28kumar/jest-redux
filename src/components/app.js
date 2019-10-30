@@ -2,7 +2,7 @@ import { Component } from 'preact';
 import { Router } from 'preact-router';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from '@material-ui/core/styles';
-import { createMuiTheme } from '@material-ui/core';
+import createMuiTheme  from '@material-ui/core/styles/createMuiTheme';
 import store from '../store';
 import Header from './header';
 import Home from '../routes/home';
