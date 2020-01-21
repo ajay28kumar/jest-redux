@@ -5,9 +5,8 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import createMuiTheme  from '@material-ui/core/styles/createMuiTheme';
 import store from '../store';
 import Header from './header';
-import Home from '../routes/home';
-import Profile from '../routes/profile';
 import NotFound from '../routes/404';
+import AsyncRoute from 'preact-async-route';
 
 
 const theme = {
@@ -37,11 +36,17 @@ export default class App extends Component {
 			<Provider store={store}>
 				<ThemeProvider theme={themes}>
 					<div id="app">
-						<Header selectedRoute={'select'} changeTheme={this.changeTheme} activeTheme={this.state.theme === 'light'}/>
+						<Header selectedRoute={'select'} changeTheme={this.changeTheme} activeTheme={this.state.theme === 'light'} />
 						<Router>
-							<Home path="/" />
-							<Profile path="/profile/" user="me" />
-							<Profile path="/profile/:user" />
+							{/* eslint-disable-next-line react/jsx-no-bind */}
+							<AsyncRoute path="/" getComponent={() => import('../routes/home').then(
+								(module) => module.default,
+							)}  loading={() => null}
+							/>
+							<AsyncRoute path="/profile" getComponent={() => import('../routes/profile').then(
+								(module) => module.default,
+							)}  loading={() => null}
+							/>
 							<NotFound default />
 						</Router>
 					</div>
