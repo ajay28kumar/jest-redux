@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "preact": "^10.0.1",
+    "preact-async-route": "^2.2.1",
     "preact-material-components": "^1.6.1",
     "preact-redux": "^2.1.0",
     "preact-render-to-string": "^4.1.0",

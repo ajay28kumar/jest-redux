@@ -1,10 +1,9 @@
 import { Component } from 'preact';
 import { Router } from 'preact-router';
 import { Provider } from 'preact-redux';
+import AsyncRoute from 'preact-async-route';
 import store from '../store';
 import Header from './header';
-import Home from '../routes/home';
-import Profile from '../routes/profile';
 import NotFound from '../routes/404';
 // import Home from 'async!../routes/home';
 // import Profile from 'async!../routes/profile';
@@ -20,9 +19,14 @@ export default class App extends Component {
 				<div id="app">
 					<Header selectedRoute={this.state.currentUrl} />
 					<Router>
-						<Home path="/" />
-						<Profile path="/profile/" user="me" />
-						<Profile path="/profile/:user" />
+						<AsyncRoute path="/" getComponent={() => import('../routes/home').then(
+							(module) => module.default,
+						)} loading={() => null}
+						/>
+						<AsyncRoute path="/profile" getComponent={() => import('../routes/profile').then(
+							(module) => module.default,
+						)}  loading={() => null}
+						/>
 						<NotFound default />
 					</Router>
 				</div>
